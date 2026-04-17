@@ -42,6 +42,7 @@ export default function Home() {
       <div className="bg-glow bg-primary w-[800px] h-[800px] bottom-[-400px] left-[10%]" />
       
       <Navbar />
+      <div className="h-24 md:h-28 shrink-0" aria-hidden="true" />
       
       <main className="flex-1 z-10">
         <Hero />
