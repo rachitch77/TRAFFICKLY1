@@ -110,8 +110,8 @@ export function Contact() {
                   <Mail className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <p className="text-xs text-muted-foreground">Email (Founder)</p>
-                  <p className="font-medium">aiintellisense.sales@gmail.com</p>
+                  <p className="text-xs text-muted-foreground">Email</p>
+                  <p className="font-medium">hello@traffickly.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
