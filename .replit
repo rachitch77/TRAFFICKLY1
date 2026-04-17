@@ -28,13 +28,13 @@ args = "API Server"
 name = "Start application"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "PORT=8081 BASE_PATH=/ pnpm --filter @workspace/agency-website run dev"
-waitForPort = 8081
-
 [workflows.workflow.metadata]
 outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "PORT=21836 BASE_PATH=/ pnpm --filter @workspace/agency-website run dev"
+waitForPort = 21836
 
 [[workflows.workflow]]
 name = "API Server"
