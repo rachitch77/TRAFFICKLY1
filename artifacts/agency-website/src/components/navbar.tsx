@@ -44,7 +44,7 @@ export function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
-            <ul className="flex items-center gap-7 text-base font-medium text-muted-foreground">
+            <ul className="flex items-center gap-7 text-lg font-medium text-muted-foreground">
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <a
