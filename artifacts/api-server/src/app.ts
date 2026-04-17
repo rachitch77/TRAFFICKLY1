@@ -27,6 +27,7 @@ app.use(
     },
   }),
 );
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -36,7 +37,9 @@ app.use("/api", router);
 const staticDir = process.env["STATIC_DIR"];
 if (staticDir && existsSync(staticDir)) {
   app.use(express.static(staticDir));
-  app.get("*", (_req, res) => {
+
+  // ✅ FIXED: Express 5 compatible catch-all route
+  app.get(/.*/, (_req, res) => {
     res.sendFile(path.join(staticDir, "index.html"));
   });
 }

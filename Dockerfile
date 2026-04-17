@@ -8,10 +8,8 @@ RUN corepack enable && corepack prepare pnpm@latest --activate
 
 WORKDIR /app
 
-# ✅ ADD THIS (CRITICAL FIX)
 COPY tsconfig.base.json ./tsconfig.base.json
 
-# Copy manifest files first for better caching
 COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
 COPY lib/db/package.json                     lib/db/package.json
 COPY lib/api-spec/package.json               lib/api-spec/package.json
@@ -20,19 +18,14 @@ COPY lib/api-client-react/package.json       lib/api-client-react/package.json
 COPY artifacts/api-server/package.json       artifacts/api-server/package.json
 COPY artifacts/agency-website/package.json   artifacts/agency-website/package.json
 
-# Install dependencies
-RUN pnpm install --frozen-lockfile --config.minimumReleaseAge=0
-
-# Copy source
 COPY lib/ lib/
 COPY artifacts/api-server/ artifacts/api-server/
 COPY artifacts/agency-website/ artifacts/agency-website/
 
-# Build frontend
+RUN pnpm install --frozen-lockfile
 RUN NODE_ENV=production BASE_PATH=/ PORT=3000 \
     pnpm --filter @workspace/agency-website run build
 
-# Build API server
 RUN pnpm --filter @workspace/api-server run build
 
 
@@ -47,6 +40,15 @@ WORKDIR /app
 
 COPY --from=builder /app/artifacts/api-server/dist ./artifacts/api-server/dist
 COPY --from=builder /app/artifacts/agency-website/dist/public ./artifacts/agency-website/dist/public
+
+# ✅ FIXED PROPERLY (pnpm is enabled first)
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+# install only production dependencies
+COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
+COPY artifacts/api-server/package.json artifacts/api-server/package.json
+
+RUN pnpm install --prod --frozen-lockfile
 
 EXPOSE 8080
 
