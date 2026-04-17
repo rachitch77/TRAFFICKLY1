@@ -25,3 +25,29 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - `pnpm --filter @workspace/api-server run dev` — run API server locally
 
 See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details.
+
+## Artifacts
+
+### Hybrid AI Marketing Agency Website (`artifacts/agency-website`)
+- Preview path: `/`
+- React + Vite frontend, single-page landing site
+- Agency name: **GrowthAI**
+- Dark SaaS-style design (deep dark bg + purple/cyan gradient accents)
+- Sections: Hero, Services, Industries, How It Works, Pricing, Testimonials, About, Contact, Footer
+- Contact form connects to backend API (`POST /api/leads`) — stores leads in PostgreSQL
+
+### API Server (`artifacts/api-server`)
+- Express 5 backend
+- Routes: `GET /api/healthz`, `POST /api/leads`, `GET /api/leads`
+- Lead submissions stored in `leads` table via Drizzle ORM
+
+## Database Schema
+
+### `leads` table
+- `id` (serial PK)
+- `name` (text)
+- `email` (text)
+- `phone` (text)
+- `business_type` (text)
+- `message` (text)
+- `created_at` (timestamp)

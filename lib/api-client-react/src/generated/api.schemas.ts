@@ -8,3 +8,29 @@
 export interface HealthStatus {
   status: string;
 }
+
+export interface CreateLeadBody {
+  /** @minLength 1 */
+  name: string;
+  email: string;
+  phone: string;
+  businessType: string;
+  message: string;
+}
+
+export interface Lead {
+  id: number;
+  name: string;
+  email: string;
+  phone: string;
+  businessType: string;
+  message: string;
+  createdAt: string;
+}
+
+export type ValidationErrorDetailsItem = { [key: string]: unknown };
+
+export interface ValidationError {
+  error: string;
+  details?: ValidationErrorDetailsItem[];
+}

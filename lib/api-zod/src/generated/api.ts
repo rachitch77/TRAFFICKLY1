@@ -14,3 +14,31 @@ import * as zod from "zod";
 export const HealthCheckResponse = zod.object({
   status: zod.string(),
 });
+
+/**
+ * Store a new lead from the contact form
+ * @summary Submit a new lead
+ */
+
+export const CreateLeadBody = zod.object({
+  name: zod.string().min(1),
+  email: zod.string().email(),
+  phone: zod.string(),
+  businessType: zod.string(),
+  message: zod.string(),
+});
+
+/**
+ * Returns all submitted leads
+ * @summary List all leads
+ */
+export const ListLeadsResponseItem = zod.object({
+  id: zod.number(),
+  name: zod.string(),
+  email: zod.string(),
+  phone: zod.string(),
+  businessType: zod.string(),
+  message: zod.string(),
+  createdAt: zod.coerce.date(),
+});
+export const ListLeadsResponse = zod.array(ListLeadsResponseItem);

@@ -1,0 +1,190 @@
+Act as a senior full-stack developer and UI/UX designer.
+
+Build a complete, production-ready, modern, high-converting website for a "Hybrid AI + Marketing Agency" that helps businesses generate and convert customers using ads, AI, and automation.
+
+Tech Stack Requirements:
+
+* Frontend: Next.js (App Router) + React + Tailwind CSS
+* Backend: Python FastAPI (for contact form + lead handling APIs)
+* Database: PostgreSQL or Supabase (store leads)
+* Deployment-ready for Fly.io (backend) and Vercel (frontend)
+* Clean, scalable folder structure
+* Environment variables support
+* Fully responsive (mobile-first)
+
+---
+
+🌐 WEBSITE STRUCTURE:
+
+1. Landing Page (Home)
+
+* Strong headline:
+  “We bring you customers and convert them into booked appointments automatically”
+* Subheadline explaining Ads + AI + Automation
+* CTA buttons:
+
+  * “Get More Customers”
+  * “Book Free Consultation”
+* Hero section with modern UI
+* Trust indicators (dummy logos/testimonials)
+
+---
+
+2. Services Section (IMPORTANT)
+
+Group services into 3 categories:
+
+A. Lead Generation
+
+* Google Ads
+* Meta Ads (Facebook + Instagram)
+* Instagram Ads
+* YouTube Ads
+
+B. AI & Automation
+
+* AI Chatbots (RAG-based)
+* WhatsApp Automation
+* Lead Follow-Up Automation
+* Appointment Booking Systems
+
+C. Digital Presence
+
+* Website Development
+* Google Business Profile (Maps Optimization)
+
+Each service should have:
+
+* Short description
+* Icon
+* Benefit-focused explanation
+
+---
+
+3. Industries We Serve
+
+* Home Services (HVAC, plumbing, roofing, electricians, pest control)
+* Healthcare (clinics, dentists, cosmetic clinics, physiotherapy)
+
+Include cards with icons and short benefits.
+
+---
+
+4. How It Works Section
+
+Simple 3-step process:
+
+1. We run ads → you get leads
+2. AI system engages & qualifies
+3. Leads convert into booked appointments
+
+---
+
+5. Pricing Section
+
+3 tiers:
+
+Starter:
+
+* Basic ads + automation
+* Price: ₹25,000/month or $400/month
+
+Growth:
+
+* Ads + full automation + follow-ups
+* Price: ₹50,000/month or $900/month
+
+Premium:
+
+* Full system + optimization
+* Price: ₹90,000/month or $1800/month
+
+Note: “Ad spend is separate”
+
+---
+
+6. About Us
+
+* Who we are
+* Mission: helping businesses grow with AI + marketing
+* Focus on results, automation, ROI
+
+---
+
+7. Contact / CTA Section
+
+* Strong CTA:
+  “Ready to get more customers?”
+
+* Contact form fields:
+
+  * Name
+  * Email
+  * Phone
+  * Business Type
+  * Message
+
+* Backend API to store leads in database
+
+* Show success message after submission
+
+---
+
+8. Footer
+
+* Links (Home, Services, Pricing, Contact)
+* Social icons
+* Email/contact info
+
+---
+
+🎨 DESIGN REQUIREMENTS:
+
+* Modern SaaS-style UI
+* Clean typography
+* Smooth animations (Framer Motion optional)
+* Gradient accents
+* Rounded cards, shadows
+* Dark + light mode (optional but preferred)
+
+---
+
+⚙️ BACKEND (FastAPI):
+
+* Create API endpoint: POST /leads
+* Validate input
+* Store in database
+* Return success response
+
+---
+
+🚀 DEPLOYMENT:
+
+* Provide clear steps to deploy:
+
+  * Frontend → Vercel
+  * Backend → Fly.io
+* Include Dockerfile for FastAPI
+* Include environment variables setup
+
+---
+
+🧠 EXTRA (IMPORTANT):
+
+* Optimize for conversions (not just design)
+* Add multiple CTA buttons across page
+* Fast loading speed
+* SEO basics (meta tags, titles)
+
+---
+
+OUTPUT:
+
+* Full working code (frontend + backend)
+* Folder structure
+* Setup instructions
+* Deployment instructions
+
+Make the website look like a premium high-ticket agency that can charge ₹50K–₹1L/month.
+
+Avoid placeholders. Make it realistic, clean, and production-ready.

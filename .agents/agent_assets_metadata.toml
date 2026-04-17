@@ -1,0 +1,20 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "q7CcAR7T0Ec9XOUlVEm__"
+uri = "file://artifacts/agency-website/public/images/hero-bg.png"
+type = "image"
+title = "Hero abstract tech background"
+
+[[generated]]
+id = "vJPxMdR4t7yQa82mHhM9z"
+uri = "file://artifacts/agency-website/public/images/services-ai.png"
+type = "image"
+title = "AI Automation UI abstract"
+
+[[generated]]
+id = "Azy-BfKHE5FFRWUOqB1FY"
+uri = "file://artifacts/agency-website/public/images/about-office.png"
+type = "image"
+title = "Modern tech agency office"
