@@ -18,10 +18,10 @@ const footerLinks = {
   ],
   Industries: [
     { label: "HVAC & Home Services", href: "#industries" },
-    { label: "Plumbing & Electrical", href: "#industries" },
+    { label: "Solar Panel Installation", href: "#industries" },
     { label: "Roofing & Pest Control", href: "#industries" },
-    { label: "Dental Clinics", href: "#industries" },
-    { label: "Cosmetic Clinics", href: "#industries" },
+    { label: "Dental & Cosmetic Clinics", href: "#industries" },
+    { label: "Healthcare & Specialists", href: "#industries" },
   ],
 };
 
@@ -50,7 +50,7 @@ export function Footer() {
                 <Rocket className="h-5 w-5 text-primary" />
               </div>
               <span className="font-heading font-bold text-xl">
-                Growth<span className="text-primary">AI</span>
+                Traffic<span className="text-primary">kly</span>
               </span>
             </motion.a>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-xs">
@@ -92,7 +92,7 @@ export function Footer() {
 
         <div className="mt-14 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} GrowthAI Agency. All rights reserved.
+            &copy; {new Date().getFullYear()} Traffickly. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-xs text-muted-foreground">
             <a href="#" className="hover:text-primary transition-colors">
@@ -107,7 +107,7 @@ export function Footer() {
           </div>
           <div className="flex items-center gap-2">
             <p className="text-xs text-muted-foreground">
-              hello@growthai.agency
+              hello@traffickly.com
             </p>
           </div>
         </div>

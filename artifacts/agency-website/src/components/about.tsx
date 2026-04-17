@@ -52,7 +52,7 @@ export function About() {
               <span className="text-gradient">We Always Wanted.</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              GrowthAI was founded by marketers, engineers, and AI specialists who were frustrated
+              Traffickly was founded by marketers, engineers, and AI specialists who were frustrated
               watching great businesses struggle to compete — not because their product was bad, but
               because their marketing couldn't keep up.
             </p>

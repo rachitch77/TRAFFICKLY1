@@ -111,7 +111,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground">Email</p>
-                  <p className="font-medium">hello@growthai.agency</p>
+                  <p className="font-medium">hello@traffickly.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">

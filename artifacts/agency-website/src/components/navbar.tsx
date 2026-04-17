@@ -38,7 +38,7 @@ export function Navbar() {
               <Rocket className="h-6 w-6 text-primary" />
             </div>
             <span className="font-heading font-bold text-xl tracking-tight">
-              Growth<span className="text-primary">AI</span>
+              Traffic<span className="text-primary">kly</span>
             </span>
           </a>
 
