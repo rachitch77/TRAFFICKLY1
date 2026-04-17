@@ -1,0 +1,27 @@
+# Version control
+.git
+.gitignore
+
+# Node modules (installed fresh inside Docker)
+node_modules
+**/node_modules
+
+# Build outputs (rebuilt inside Docker)
+**/dist
+artifacts/agency-website/dist
+artifacts/api-server/dist
+
+# Replit-specific
+.replit
+.local
+.cache
+attached_assets
+replit.nix
+
+# Dev / editor
+.vscode
+.idea
+*.log
+
+# Test artifacts
+coverage

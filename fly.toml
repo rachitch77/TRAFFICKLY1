@@ -1,0 +1,28 @@
+# fly.toml — Traffickly on Fly.io
+# Docs: https://fly.io/docs/reference/configuration/
+
+app = "traffickly"
+primary_region = "bom"   # Mumbai — closest to your primary market
+
+[build]
+
+[env]
+  NODE_ENV = "production"
+  PORT     = "8080"
+  STATIC_DIR = "/app/artifacts/agency-website/dist/public"
+
+[http_service]
+  internal_port       = 8080
+  force_https         = true
+  auto_stop_machines  = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+
+  [http_service.concurrency]
+    type       = "requests"
+    hard_limit = 250
+    soft_limit = 200
+
+[[vm]]
+  size   = "shared-cpu-1x"
+  memory = "512mb"
