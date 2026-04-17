@@ -11,21 +11,27 @@ import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
-  // Smooth scroll behavior for anchor links
+  // Smooth scroll behavior for anchor links — offset by fixed navbar height
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const link = target.closest('a');
-      
-      if (link && link.hash && link.hash.startsWith('#') && link.origin === window.location.origin) {
-        e.preventDefault();
+
+      if (link && link.hash && link.origin === window.location.origin) {
+        // Clicking logo or plain "#" scrolls to very top
+        if (link.hash === '#' || link.hash === '') {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          history.pushState(null, '', ' ');
+          return;
+        }
+
         const targetElement = document.querySelector(link.hash);
         if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-          // Update URL hash without jumping
+          e.preventDefault();
+          const navHeight = (document.querySelector('header') as HTMLElement)?.offsetHeight ?? 80;
+          const top = targetElement.getBoundingClientRect().top + window.scrollY - navHeight;
+          window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
           history.pushState(null, '', link.hash);
         }
       }
