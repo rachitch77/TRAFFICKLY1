@@ -31,7 +31,7 @@ paths:
       operationId: createLead
       tags: [leads]
       summary: Submit a new lead
-      description: Store a new lead from the contact form
+      description: Forward a new lead from the contact form via email
       requestBody:
         required: true
         content:
@@ -40,31 +40,17 @@ paths:
               $ref: "#/components/schemas/CreateLeadBody"
       responses:
         "201":
-          description: Lead created successfully
+          description: Lead submitted successfully
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Lead"
+                $ref: "#/components/schemas/LeadSuccess"
         "422":
           description: Validation error
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ValidationError"
-    get:
-      operationId: listLeads
-      tags: [leads]
-      summary: List all leads
-      description: Returns all submitted leads
-      responses:
-        "200":
-          description: List of leads
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/Lead"
 components:
   schemas:
     HealthStatus:
@@ -95,32 +81,16 @@ components:
         - phone
         - businessType
         - message
-    Lead:
+    LeadSuccess:
       type: object
       properties:
-        id:
-          type: integer
-        name:
-          type: string
-        email:
-          type: string
-        phone:
-          type: string
-        businessType:
-          type: string
+        success:
+          type: boolean
         message:
           type: string
-        createdAt:
-          type: string
-          format: date-time
       required:
-        - id
-        - name
-        - email
-        - phone
-        - businessType
+        - success
         - message
-        - createdAt
     ValidationError:
       type: object
       properties:

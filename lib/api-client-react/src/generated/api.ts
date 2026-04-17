@@ -19,7 +19,7 @@ import type {
 import type {
   CreateLeadBody,
   HealthStatus,
-  Lead,
+  LeadSuccess,
   ValidationError,
 } from "./api.schemas";
 
@@ -109,7 +109,7 @@ export function useHealthCheck<
 }
 
 /**
- * Store a new lead from the contact form
+ * Forward a new lead from the contact form via email
  * @summary Submit a new lead
  */
 export const getCreateLeadUrl = () => {
@@ -119,8 +119,8 @@ export const getCreateLeadUrl = () => {
 export const createLead = async (
   createLeadBody: CreateLeadBody,
   options?: RequestInit,
-): Promise<Lead> => {
-  return customFetch<Lead>(getCreateLeadUrl(), {
+): Promise<LeadSuccess> => {
+  return customFetch<LeadSuccess>(getCreateLeadUrl(), {
     ...options,
     method: "POST",
     headers: { "Content-Type": "application/json", ...options?.headers },
@@ -194,69 +194,3 @@ export const useCreateLead = <
 > => {
   return useMutation(getCreateLeadMutationOptions(options));
 };
-
-/**
- * Returns all submitted leads
- * @summary List all leads
- */
-export const getListLeadsUrl = () => {
-  return `/api/leads`;
-};
-
-export const listLeads = async (options?: RequestInit): Promise<Lead[]> => {
-  return customFetch<Lead[]>(getListLeadsUrl(), {
-    ...options,
-    method: "GET",
-  });
-};
-
-export const getListLeadsQueryKey = () => {
-  return [`/api/leads`] as const;
-};
-
-export const getListLeadsQueryOptions = <
-  TData = Awaited<ReturnType<typeof listLeads>>,
-  TError = ErrorType<unknown>,
->(options?: {
-  query?: UseQueryOptions<Awaited<ReturnType<typeof listLeads>>, TError, TData>;
-  request?: SecondParameter<typeof customFetch>;
-}) => {
-  const { query: queryOptions, request: requestOptions } = options ?? {};
-
-  const queryKey = queryOptions?.queryKey ?? getListLeadsQueryKey();
-
-  const queryFn: QueryFunction<Awaited<ReturnType<typeof listLeads>>> = ({
-    signal,
-  }) => listLeads({ signal, ...requestOptions });
-
-  return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof listLeads>>,
-    TError,
-    TData
-  > & { queryKey: QueryKey };
-};
-
-export type ListLeadsQueryResult = NonNullable<
-  Awaited<ReturnType<typeof listLeads>>
->;
-export type ListLeadsQueryError = ErrorType<unknown>;
-
-/**
- * @summary List all leads
- */
-
-export function useListLeads<
-  TData = Awaited<ReturnType<typeof listLeads>>,
-  TError = ErrorType<unknown>,
->(options?: {
-  query?: UseQueryOptions<Awaited<ReturnType<typeof listLeads>>, TError, TData>;
-  request?: SecondParameter<typeof customFetch>;
-}): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
-  const queryOptions = getListLeadsQueryOptions(options);
-
-  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
-    queryKey: QueryKey;
-  };
-
-  return { ...query, queryKey: queryOptions.queryKey };
-}

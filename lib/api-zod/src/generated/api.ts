@@ -16,7 +16,7 @@ export const HealthCheckResponse = zod.object({
 });
 
 /**
- * Store a new lead from the contact form
+ * Forward a new lead from the contact form via email
  * @summary Submit a new lead
  */
 
@@ -27,18 +27,3 @@ export const CreateLeadBody = zod.object({
   businessType: zod.string(),
   message: zod.string(),
 });
-
-/**
- * Returns all submitted leads
- * @summary List all leads
- */
-export const ListLeadsResponseItem = zod.object({
-  id: zod.number(),
-  name: zod.string(),
-  email: zod.string(),
-  phone: zod.string(),
-  businessType: zod.string(),
-  message: zod.string(),
-  createdAt: zod.coerce.date(),
-});
-export const ListLeadsResponse = zod.array(ListLeadsResponseItem);

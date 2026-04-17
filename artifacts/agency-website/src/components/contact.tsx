@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useCreateLead } from "@workspace/api-client-react";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Loader2, Phone, Mail, MapPin, AlertTriangle } from "lucide-react";
+import { CheckCircle2, Loader2, Phone, Mail, MapPin } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -77,28 +77,6 @@ export function Contact() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Tell us about your business and we will put together a custom growth strategy — completely free. No pressure, no obligation.
           </p>
-        </motion.div>
-
-        {/* Warning banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="max-w-5xl mx-auto mb-8"
-        >
-          <div className="flex items-start gap-3 rounded-xl border border-yellow-500/40 bg-yellow-500/10 px-5 py-4">
-            <AlertTriangle className="h-5 w-5 text-yellow-400 flex-shrink-0 mt-0.5" />
-            <p className="text-sm text-yellow-200 leading-relaxed">
-              <span className="font-semibold text-yellow-300">Important:</span> The contact form and hello@traffickly.com are not active yet. Please send all queries directly to our founder at{" "}
-              <a
-                href="mailto:aiintellisense.sales@gmail.com"
-                className="font-semibold underline underline-offset-2 text-yellow-300 hover:text-yellow-100 transition-colors"
-              >
-                aiintellisense.sales@gmail.com
-              </a>
-            </p>
-          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 max-w-5xl mx-auto">

@@ -18,14 +18,9 @@ export interface CreateLeadBody {
   message: string;
 }
 
-export interface Lead {
-  id: number;
-  name: string;
-  email: string;
-  phone: string;
-  businessType: string;
+export interface LeadSuccess {
+  success: boolean;
   message: string;
-  createdAt: string;
 }
 
 export type ValidationErrorDetailsItem = { [key: string]: unknown };
