@@ -37,7 +37,7 @@ router.post("/leads", async (req, res) => {
 
   await transporter.sendMail({
     from: `"GrowthAI Contact Form" <${smtpUser}>`,
-    to: "aiintellisense.sales@gmail.com",
+    to: "hello@traffickly.com",
     subject: `New Lead: ${name} — ${businessType}`,
     text: [
       `Name:          ${name}`,
