@@ -27,24 +27,24 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-md border-border py-3 shadow-sm"
-          : "bg-transparent py-5"
+          ? "bg-background/80 backdrop-blur-md border-border py-5 shadow-sm"
+          : "bg-transparent py-7"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <a href="#" className="flex items-center gap-2 group">
-            <div className="bg-primary/20 p-2 rounded-lg group-hover:bg-primary/30 transition-colors">
-              <Rocket className="h-6 w-6 text-primary" />
+            <div className="bg-primary/20 p-2.5 rounded-xl group-hover:bg-primary/30 transition-colors">
+              <Rocket className="h-7 w-7 text-primary" />
             </div>
-            <span className="font-heading font-bold text-xl tracking-tight">
+            <span className="font-heading font-bold text-2xl tracking-tight">
               Traffic<span className="text-primary">kly</span>
             </span>
           </a>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
-            <ul className="flex items-center gap-6 text-sm font-medium text-muted-foreground">
+            <ul className="flex items-center gap-7 text-base font-medium text-muted-foreground">
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <a
@@ -56,7 +56,7 @@ export function Navbar() {
                 </li>
               ))}
             </ul>
-            <Button asChild className="rounded-full font-semibold">
+            <Button asChild size="lg" className="rounded-full font-semibold px-6">
               <a href="#contact">Get Started</a>
             </Button>
           </nav>
