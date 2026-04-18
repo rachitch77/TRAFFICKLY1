@@ -101,8 +101,8 @@ export function Contact() {
                   <Phone className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <p className="text-xs text-muted-foreground">Call / WhatsApp</p>
-                  <p className="font-medium">+91 98000 00000</p>
+                  <p className="text-xs text-muted-foreground"> WhatsApp</p>
+                  <p className="font-medium">+91 8791109407</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -112,6 +112,7 @@ export function Contact() {
                 <div>
                   <p className="text-xs text-muted-foreground">Email</p>
                   <p className="font-medium">hello@traffickly.com</p>
+                  <p className="font-medium">aiintellisense.sales@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">

@@ -107,7 +107,7 @@ export function Footer() {
           </div>
           <div className="flex items-center gap-2">
             <p className="text-xs text-muted-foreground">
-              hello@traffickly.com
+              aiintellisense.sales@gmail.com
             </p>
           </div>
         </div>
