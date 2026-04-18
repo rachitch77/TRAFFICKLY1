@@ -19,7 +19,7 @@ Tech Stack Requirements:
 1. Landing Page (Home)
 
 * Strong headline:
-  “We bring you customers and convert them into booked appointments automatically”
+  “We bring you customers and convert them into  leads or booked appointments automatically”
 * Subheadline explaining Ads + AI + Automation
 * CTA buttons:
 

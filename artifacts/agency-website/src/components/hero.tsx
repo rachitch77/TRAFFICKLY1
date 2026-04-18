@@ -23,7 +23,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
           >
-            We Bring You Customers and Convert Them Into <span className="text-gradient">Booked Appointments</span> Automatically
+            We Bring You Customers and Convert Them Into <span className="text-gradient">Leads or Booked Appointments</span> Automatically
           </motion.h1>
           
           <motion.p
