@@ -102,7 +102,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground"> WhatsApp</p>
-                  <p className="font-medium">+91 8791109407</p>
+                  <p className="font-medium">+91 7983863521</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
